@@ -66,7 +66,7 @@ html{
     position: fixed;
     box-shadow:1px 1px 50px rgba(0,0,0,.3);
     transform: scale(0);
-    font-size:20px;
+    font-size:18px;
     text-align: center;
     z-index: 100000;
     overflow: hidden;
@@ -86,7 +86,7 @@ html{
     text-align: center;
     background: black;
     color: white;
-    font-size: 22px;
+    font-size: 20px;
     height: 50px;
     line-height: 50px;
     position: relative;
@@ -100,17 +100,17 @@ html{
     transform: scale(0);
 }
 .lay_close{
-    font-size: 26px;
+    font-size: 22px;
     display: inline-block;
     cursor: pointer;
     color: white;
     position: absolute;
-    top: 11px;
+    top: 13px;
     right: 12px;
     text-align: center;
 }
 .lay_content{
-    margin-top:50px;
+    margin-top:80px;
 }
 .lay_content .lay_icon{
     position: relative;

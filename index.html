@@ -130,12 +130,23 @@ body .form_box .btn_dis{
  *
  */ 
 // var add = new lay({content:'恭喜您，获得XXXXXXXXXXXXXXXX'})
-var add = new lay({
-    type:3,
-    area:['603px','278px'],
-    content:$(".layer_01"),
-})
+// var add = new lay({
+//     content:'今天天气真好'
+// })
 
+var add = new lay({
+    type:2,
+    title:'<p style="background:#7b0000">提示</p>',
+    content:'<div style="position: relative;top: -22px;">领取成功</div>',
+    btn:[1,['确认','取消']],
+    btn1Func:function(){
+        alert(1);
+    },
+    btn2Func:function(){
+        alert(2);
+        add.close();
+    }
+})
 
 // var add = new lay({
 //     type:2,

@@ -18,7 +18,7 @@ class lay{
         }
 
         this.anim = 'anim' in obj ? obj.anim : 'anim1';
-        this.area = 'area' in obj ? obj.area : ['600px','300px'];
+        this.area = 'area' in obj ? obj.area : ['500px','240px'];
         this.shade = 'shade' in obj ? [ obj.shade[0] , obj.shade[1] ] : ['black','0.6'];
         this.title = 'title' in obj ? obj.title : '温馨提示';
        
