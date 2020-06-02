@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/ljj_lay.css">
+    <style>
+        .form_box{
+    margin-top:95px;
+    margin-left: 32px;
+    display: inline-block;
+    text-align: center;
+}
+.form_box li{
+    height:33px;
+    margin-bottom:7px;
+    text-align: left;
+    box-sizing: content-box;
+    
+}
+.form_box .inp_n{
+    width:65px;
+    height:33px;
+    line-height: 33px;
+    display: inline-block;
+    overflow:hidden;
+    text-align:justify;
+    text-align-last: justify;
+    /* ie */
+    text-justify:distribute-all-lines;
+    margin-right:4px;
+    font-size:16px;
+}
+.form_box .colon{
+    width:10px;
+    height:33px;
+    line-height: 33px;
+    display: inline-block;
+    margin-right:4px;
+    vertical-align: top;
+    overflow:hidden;
+    text-align:justify;
+    text-align-last: justify;
+    /* ie */
+    text-justify:distribute-all-lines;
+    font-size:16px;
+}
+.form_box input{
+    width:230px;
+    height:33px;
+    vertical-align: top;
+    border:1px solid #d3cfc4;
+    background: white;
+    padding-left:3px;
+    box-sizing: border-box;
+    font-size:14px;
+    outline: 0;
+}
+.form_box button{
+    width:99px;
+    height:33px;
+    background: #c10808;
+    color:white;
+    border:0;
+    font-size:12px;
+    line-height: 26px;
+    vertical-align: top;
+    text-align: center;
+    margin-left:14px;
+}
+body .form_box .btn_dis{
+    background: #adadad;
+}
+
+.form_box .gc_btn:hover{
+    background: #fa6a6a;
+    cursor: pointer;
+}
+
+.lab{
+    display: inline-block;
+    font-size:14px;
+    color:#33554e;
+    margin-top: 10px;
+}
+.lab input{
+    width:15px;
+    height:15px;
+    position: relative;
+    top:3px;
+    right: 6px;
+}
+.lab a{
+    color:#3b1a0f;
+}
+
+.asdasd{
+    background: black;
+}
+    </style>
+</head>
+<body>
+
+
+<!-- 需要弹出的dom -->
+<div class="lay_custom layer_01">
+    <ul class="form_box">
+       比如这样的
+    </ul>
+</div>
+
+
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="./js/ljj_lay.js"></script>
+<script>
+    
+/** 
+ *  type:弹框模式 1为alert 2为config 3为dom元素框保留title  4为纯dom元素框，无title标签    无定义默认为1
+ *  btn:[0]为使用模式，1代表[1]只需填入按钮文字，即可生成，2代表可直接写入样式。 无定义默认无按钮
+ *  skin:当使用通用弹框背景时可不填，需要使用自定义背景时填入，值为自定义class。    无定义默认通用
+ *  content:内容 可以直接写div、p等元素标签以方便写入行内class,但在复杂dom建议使用type:3克隆放入 type:3使用方式 content:$('dom标签')。 无定义默认无内容
+ *  content:数组形式-[0]可添加指定的class,以添加icon标签。[1]为内容
+ *  title:标题 可以直接写div、p等元素标签以方便写入行内class。 无定义或false默认无内容
+ *  anim:弹出方式，目前只有一个，无定义默认为anim0;
+ *  area:弹框的高宽，数组形式，无定义默认为['600px','300px'];
+ *  btn1Func:第一个按钮的事件
+ *  btn2Func:第二个按钮的事件
+ *  
+ *
+ */ 
+// var add = new lay({content:'恭喜您，获得XXXXXXXXXXXXXXXX'})
+var add = new lay({
+    type:3,
+    area:['603px','278px'],
+    content:$(".layer_01"),
+})
+
+
+// var add = new lay({
+//     type:2,
+//     title:'<p style="background:black">温馨提示</p>',
+//     content:'<div style="margin-top:80px">恭喜您，获得XXXXXXXXXXXXXXXX</div>',
+//     btn:[1,['确认','取消']],
+//     // btn:[2,['skin-start','skin-end']],
+//     anim:'anim0',
+//     skin:'bg_cu_1',//父级自定义class
+//     shade:['black','0.1'],
+//     area:['734px','326px'],
+//     btn1Func:function(){
+//         alert(1);
+//     },
+//     btn2Func:function(){
+//         alert(2);
+//     }
+// });
+   
+// var add = new lay({
+//     type:1,//1为alert 2为config 3为dom元素框
+//     title:'<p style="background:black">温馨提示</p>',
+//     content:'<div style="margin-top:80px">恭喜您，获得XXXXXXXXXXXXXXXX</div>',
+//     btn:[1,['确认']],
+//     // btn:[2,['skin-start','skin-end']],
+//     anim:'anim0',
+//     skin:'bg_cu_1',//父级自定义class
+//     shade:['black','0.4'],
+//     area:['603px','278px'],
+//     btn1Func:function(){
+//         alert(1);
+//     },
+//     btn2Func:function(){
+//         alert(2);
+//     }
+// });   
+
+
+
+    // $('.btn').click(function(){
+    //     var dd = new lay({
+    //         anim:'anim0',
+    //         title:'温馨提示',
+    //         btn:['btn'],
+    //         content:'ddd',
+    //         shade:['black','0.2'],
+    //         area:['400px','200px']
+    //     });
+    //     console.log(dd.times)
+    // })
+
+    
+</script>
+</body>
+</html>

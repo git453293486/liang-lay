@@ -1,0 +1,44 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "815884",
+      "name": "关闭",
+      "font_class": "close",
+      "unicode": "e616",
+      "unicode_decimal": 58902
+    },
+    {
+      "icon_id": "1951951",
+      "name": "注意",
+      "font_class": "zhuyi",
+      "unicode": "e61c",
+      "unicode_decimal": 58908
+    },
+    {
+      "icon_id": "6204756",
+      "name": "失败",
+      "font_class": "shibai",
+      "unicode": "e64e",
+      "unicode_decimal": 58958
+    },
+    {
+      "icon_id": "6999238",
+      "name": "成功",
+      "font_class": "chenggong",
+      "unicode": "e62f",
+      "unicode_decimal": 58927
+    },
+    {
+      "icon_id": "10056825",
+      "name": "问号",
+      "font_class": "wenhao",
+      "unicode": "e617",
+      "unicode_decimal": 58903
+    }
+  ]
+}
