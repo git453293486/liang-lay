@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./css/ljj_lay.css">
+    <link rel="stylesheet" href="./css/liang-lay.min.css">
     <style>
-        .form_box{
+.form_box{
     margin-top:95px;
     margin-left: 32px;
     display: inline-block;
@@ -98,6 +98,9 @@ body .form_box .btn_dis{
 .asdasd{
     background: black;
 }
+.asddd{
+    background:url('./sf_bg_10.png')
+}
     </style>
 </head>
 <body>
@@ -106,13 +109,28 @@ body .form_box .btn_dis{
 <!-- 需要弹出的dom -->
 <div class="lay_custom layer_01">
     <ul class="form_box">
-       比如这样的
+        <li><span class="inp_n">账号</span><span class="colon">:</span>
+        <input type="text" placeholder="请填写手机号"></li>
+        <li><span class="inp_n">设置密码</span><span class="colon">:</span>
+        <input type="password" placeholder="请设置密码"></li>
+        <li><span class="inp_n">确认密码</span><span class="colon">:</span>
+        <input type="password" placeholder="请再次输入密码"></li>
+        <li><span class="inp_n">姓名</span><span class="colon">:</span>
+        <input type="text" placeholder="请输入您的姓名"></li>
+        <li><span class="inp_n">身份证</span><span class="colon">:</span>
+        <input type="text" placeholder="请输入18位身份证号"></li>
+        <li><span class="inp_n">验证码</span><span class="colon">:</span>
+        <input style="width:116px;" type="text" placeholder="请输入验证码"><button class="gc_btn" >获取验证码</button></li>
+        <label class="lab">
+            <input name="Fruit"  type="checkbox" value="false" />已阅读并同意用户协议及防止沉迷协议</a>
+        </label><br>
+        <a></a>
     </ul>
 </div>
 
 
 <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="./js/ljj_lay.js"></script>
+<script src="./js/liang-lay.min.js"></script>
 <script>
     
 /** 
@@ -134,19 +152,84 @@ body .form_box .btn_dis{
 //     content:'今天天气真好'
 // })
 
+// var add = new lay({
+//     type:2,
+//     title:false,
+//     content:'<div style="position: relative;top: -22px;">领取成功</div>',
+//     btn:[1,['确认','取消']],
+//     btn1Func:function(){
+//     },
+//     btn2Func:function(){
+//         add.close();
+//     }
+// })
+
+// var add = new lay({
+//     type:0,
+//     content:'大雨天点了一份外卖大餐',
+//     time:'500'
+// })
+
+
 var add = new lay({
-    type:2,
-    title:'<p style="background:#7b0000">提示</p>',
-    content:'<div style="position: relative;top: -22px;">领取成功</div>',
-    btn:[1,['确认','取消']],
+    type:1,
+    title:'提示',
+    content:'<p>你外卖被别人拿了</p>',
+    btn:[1,['确定']],
     btn1Func:function(){
-        alert(1);
-    },
-    btn2Func:function(){
-        alert(2);
-        add.close();
+        var add = new lay({
+            type:2,
+            content:'你选择',
+            btn:[1,['先找饭','先找吃你饭的人']],
+            btn1Func:function(){
+                var add = new lay({
+                    type:0,
+                    content:'再点一份得等半小时',
+                })
+            },
+            btn2Func:function(){
+                var add = new lay({
+                    type:0,
+                    content:'找到了，但是他已经开始吃了',
+                })
+            }
+        })
     }
 })
+
+// var add = new lay({
+//     type:3,
+//     content:$(".layer_01"),
+//     anim:'anim1'
+// })
+
+
+// var add = new lay({
+//     type:4,
+//     content:'<img src="./img/1.gif" alt="">',
+//     anim:'anim1'
+// })
+
+
+
+
+
+
+
+
+
+
+
+
+// var add = new lay({
+//     type:4,
+//     title:false,
+//     content:'<img src="./img/2.gif">'
+// })
+
+
+
+
 
 // var add = new lay({
 //     type:2,
