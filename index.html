@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./css/liang-lay.css">
+    <link rel="stylesheet" href="./css/liang-lay.min.css">
     <style>
 .form_box{
     margin-top:95px;
@@ -132,12 +132,11 @@ body .form_box .btn_dis{
 
 
 <script src="./js/jquery.min.js"></script>
-<script src="./js/liang-lay.js"></script>
+<script src="./js/liang-lay.min.js"></script>
 <script>
 function func1(){
     var add = new lay({
         type:2,
-        title:false,
         content:'<div style="position: relative;top: -22px;">领取成功</div>',
         btn:[1,['确认','取消']],
         btn1Func:function(){
@@ -150,7 +149,6 @@ function func1(){
 function func2(){
     var add = new lay({
         type:2,
-        title:false,
         content:'<div style="position: relative;top: -22px;">领取成功</div>',
         btn:[1,['确认','取消']],
         btn1Func:function(){
