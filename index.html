@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./css/liang-lay.min.css">
+    <link rel="stylesheet" href="./css/liang-lay.css">
     <style>
 .form_box{
     margin-top:95px;
@@ -105,7 +105,9 @@ body .form_box .btn_dis{
 </head>
 <body>
 
-
+<button onclick="func1();">asdasdasd</button>
+<br>
+<button onclick="func2();">asdasdasd</button>
 <!-- 需要弹出的dom -->
 <div class="lay_custom layer_01">
     <ul class="form_box">
@@ -129,11 +131,45 @@ body .form_box .btn_dis{
 </div>
 
 
-<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="./js/liang-lay.min.js"></script>
+<script src="./js/jquery.min.js"></script>
+<script src="./js/liang-lay.js"></script>
 <script>
-    
+function func1(){
+    var add = new lay({
+        type:2,
+        title:false,
+        content:'<div style="position: relative;top: -22px;">领取成功</div>',
+        btn:[1,['确认','取消']],
+        btn1Func:function(){
+        },
+        btn2Func:function(){
+            add.close();
+        }
+    })
+}
+function func2(){
+    var add = new lay({
+        type:2,
+        title:false,
+        content:'<div style="position: relative;top: -22px;">领取成功</div>',
+        btn:[1,['确认','取消']],
+        btn1Func:function(){
+        },
+        btn2Func:function(){
+            add.close();
+        }
+    })
+}
+//增加了uid来控制区分标识
+//增加zindex 
 /** 
+ * 在生成实例时，直接将content内的内容包裹到lay内。
+ * 
+ * 
+ * 在判断传入content为对象时，
+ * 
+ * 
+ * 
  *  type:弹框模式 1为alert 2为config 3为dom元素框保留title  4为纯dom元素框，无title标签    无定义默认为1
  *  btn:[0]为使用模式，1代表[1]只需填入按钮文字，即可生成，2代表可直接写入样式。 无定义默认无按钮
  *  skin:当使用通用弹框背景时可不填，需要使用自定义背景时填入，值为自定义class。    无定义默认通用
@@ -148,9 +184,6 @@ body .form_box .btn_dis{
  *
  */ 
 // var add = new lay({content:'恭喜您，获得XXXXXXXXXXXXXXXX'})
-// var add = new lay({
-//     content:'今天天气真好'
-// })
 
 // var add = new lay({
 //     type:2,
@@ -166,36 +199,37 @@ body .form_box .btn_dis{
 
 // var add = new lay({
 //     type:0,
+//     anim:'anim2',
 //     content:'大雨天点了一份外卖大餐',
-//     time:'500'
+//     time:'1500'
 // })
 
 
-var add = new lay({
-    type:1,
-    title:'提示',
-    content:'<p>你外卖被别人拿了</p>',
-    btn:[1,['确定']],
-    btn1Func:function(){
-        var add = new lay({
-            type:2,
-            content:'你选择',
-            btn:[1,['先找饭','先找吃你饭的人']],
-            btn1Func:function(){
-                var add = new lay({
-                    type:0,
-                    content:'再点一份得等半小时',
-                })
-            },
-            btn2Func:function(){
-                var add = new lay({
-                    type:0,
-                    content:'找到了，但是他已经开始吃了',
-                })
-            }
-        })
-    }
-})
+// var add = new lay({
+//     type:1,
+//     title:'提示',
+//     content:'<p>你外卖被别人拿了</p>',
+//     btn:[1,['确定']],
+//     btn1Func:function(){
+//         var add = new lay({
+//             type:2,
+//             content:'你选择',
+//             btn:[1,['先找饭','先找吃你饭的人']],
+//             btn1Func:function(){
+//                 var add = new lay({
+//                     type:0,
+//                     content:'再点一份得等半小时',
+//                 })
+//             },
+//             btn2Func:function(){
+//                 var add = new lay({
+//                     type:0,
+//                     content:'找到了，但是他已经开始吃了',
+//                 })
+//             }
+//         })
+//     }
+// })
 
 // var add = new lay({
 //     type:3,
@@ -207,7 +241,8 @@ var add = new lay({
 // var add = new lay({
 //     type:4,
 //     content:'<img src="./img/1.gif" alt="">',
-//     anim:'anim1'
+//     anim:'anim1',
+//     time:1500,
 // })
 
 
