@@ -1,6 +1,6 @@
 class lay{
   static age = 0
-
+  static zindex = 100
   constructor(obj){
       // 属性筛洗
       this.obj = this.clean(obj)
@@ -21,7 +21,10 @@ class lay{
       this.shade = 'shade' in obj ? [ obj.shade[0] , obj.shade[1] ] : ['black','0.6'];
       this.title = 'title' in obj ? obj.title : '温馨提示';
       this.time = 'time' in obj ? obj.time : 1200;
-      this.zindex = 'zindex' in obj ? obj.zindex : 100;
+      
+      lay.zindex = 'zindex' in lay ? lay.zindex : 101;
+
+
       //-无覆盖
       //弹框背景样式
       if('skin' in obj) this.skin = obj.skin;
@@ -131,16 +134,17 @@ class lay{
   
   getId(){
       lay.age++;
+      lay.zindex++;
   }
   start(){  
-      $('body').append(`<div class="lay_shade " uid="${lay.age}" style="z-index:${this.zindex}"  ></div>`);
+      $('body').append(`<div class="lay_shade " uid="${lay.age}" style="z-index:${lay.zindex}"  ></div>`);
       if(this.type == 3){
           this.content.css('display','block');
-          this.content.wrapAll(`<div class="lay_container" uid="${lay.age}" style="z-index:${this.zindex+1}"></div>`)
+          this.content.wrapAll(`<div class="lay_container" uid="${lay.age}" style="z-index:${lay.zindex+1}"></div>`)
           .wrapAll('<div class="lay_content"></div>');
       }else{
           $('body').append(`
-          <div class="lay_container" uid="${lay.age}" style="z-index:${this.zindex+1}">
+          <div class="lay_container" uid="${lay.age}" style="z-index:${lay.zindex+1}">
               <div class="lay_content">${this.content}</div>
           </div>`);
       }
@@ -280,18 +284,18 @@ class lay{
   // 关闭函数
   close(){    
       
-      this.contDom.addClass(this.anim+'0')
-      this.shadeDom.animate({'opacity':'0'},300);
-      setTimeout(() => {
-          if(this.type == 3){
-              this.titleDom.remove(); 
-              this.closeDom.remove(); 
-              this.content.unwrap().unwrap().css({'display':'none'});
-          }else{
-              this.contDom.remove();
-          }
-          this.shadeDom.remove();
-      },300);
+    this.contDom.addClass(this.anim+'0')
+    this.shadeDom.animate({'opacity':'0'},300);
+    setTimeout(() => {
+        if(this.type == 3){
+            this.titleDom.remove(); 
+            this.closeDom.remove(); 
+            this.content.unwrap().unwrap().css({'display':'none'});
+        }else{
+            this.contDom.remove();
+        }
+        this.shadeDom.remove();
+    },300);
   }
   closeTime(obj){
       if(('time' in obj)&&(this.type != 0)) {
@@ -300,4 +304,10 @@ class lay{
           }, this.time);
       }
   }
+  static Close(){
+      
+  }
 }
+
+
+

@@ -4,10 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./css/liang-lay.min.css">
+    <link rel="stylesheet" href="./css/liang-lay.css">
     <style>
 .form_box{
-    margin-top:95px;
     margin-left: 32px;
     display: inline-block;
     text-align: center;
@@ -111,6 +110,8 @@ body .form_box .btn_dis{
 <!-- 需要弹出的dom -->
 <div class="lay_custom layer_01">
     <ul class="form_box">
+        <a onclick="funca()">asd</a>
+        <a onclick="funcb()">asd</a>
         <li><span class="inp_n">账号</span><span class="colon">:</span>
         <input type="text" placeholder="请填写手机号"></li>
         <li><span class="inp_n">设置密码</span><span class="colon">:</span>
@@ -134,6 +135,8 @@ body .form_box .btn_dis{
 <script src="./js/jquery.min.js"></script>
 <script src="./js/liang-lay.min.js"></script>
 <script>
+
+
 function func1(){
     var add = new lay({
         type:2,
@@ -229,11 +232,39 @@ function func2(){
 //     }
 // })
 
-// var add = new lay({
-//     type:3,
-//     content:$(".layer_01"),
-//     anim:'anim1'
-// })
+function funca(){
+    var add = new lay({
+        type:2,
+        title:false,
+        content:'<div style="position: relative;top: -22px;">领取成功</div>',
+        btn:[1,['确认','取消']],
+        area:['300px','500px'],
+        btn1Func:function(){
+        },
+        btn2Func:function(){
+            add.close();
+        }
+    })
+}
+function funcb(){
+    var add = new lay({
+        type:2,
+        title:false,
+        content:'<div style="position: relative;top: -22px;">领取成功</div>',
+        btn:[1,['确认','取消']],
+        btn1Func:function(){
+        },
+        btn2Func:function(){
+            add.close();
+        }
+    })
+}
+var add = new lay({
+    type:3,
+    content:$(".layer_01"),
+    anim:'anim1',
+    area:['500px','1000px']
+})
 
 
 // var add = new lay({
