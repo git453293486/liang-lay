@@ -276,7 +276,7 @@ html{
 }
 .c_msgClass{
     min-height:50px;
-    padding:0 20px;
+    padding:0;
     display: flex;
     align-items: center;
     justify-content: center;
